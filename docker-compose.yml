@@ -1,0 +1,33 @@
+version: '3'
+services:
+    mysqlserver:
+        image: mysql/mysql-server:5.7
+        hostname: mysql
+        ports:
+            - "3306:3306"
+        env_file: 
+            ./envVars.env
+        networks:
+            - mainnet
+    armaserver:
+        build: "./armaDocker"
+        volumes:
+            - "/home/dardo/RPF_Docker/.RPFramework/bin/MPMissions:/arma3/mpmissions/"
+            - "/home/dardo/RPF_Docker/.RPFramework/bin/@extDB3:/arma3/@extDB3"
+            - "/home/dardo/RPF_Docker/.RPFramework/bin/@RPF_Server:/arma3/@RPF_Server"
+            - "/home/dardo/RPF_Docker/.RPFramework/bin/@RPFramework:/arma3/@RPFramework"
+            - "/home/dardo/RPF_Docker/mnt/configFiles:/configFiles"
+        tty: true
+        ports: 
+            - "2302:2302"
+            - "2303:2303"
+            - "2304:2304"
+            - "2305:2305"
+            - "2306:2306"
+        env_file:
+            - ./envVars.env
+        networks:
+            - mainnet
+
+networks: 
+    mainnet:

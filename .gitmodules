@@ -1,0 +1,3 @@
+[submodule "RPFramework"]
+	path = .RPFramework
+	url = https://github.com/RPFramework/RPFramework
