@@ -1,1 +1,0 @@
-#include "Dialogs\setName.hpp"

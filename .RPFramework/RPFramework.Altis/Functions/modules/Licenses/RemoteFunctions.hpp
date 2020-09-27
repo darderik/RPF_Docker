@@ -1,4 +1,0 @@
-Function(ClientModules_fnc_openLicense,CLIENT)
-Function(ServerModules_fnc_deleteLicense,SERVER)
-Function(ServerModules_fnc_fetchLicenses,SERVER)
-Function(ServerModules_fnc_insertLicense,SERVER)

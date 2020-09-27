@@ -1,6 +1,0 @@
-Function(ClientModules_fnc_receiveContacts,CLIENT)
-Function(ClientModules_fnc_receiveText,CLIENT)
-
-Function(ServerModules_fnc_fetchContacts,SERVER)
-Function(ServerModules_fnc_insertPhoneContact,SERVER)
-Function(ServerModules_fnc_updatePhoneContact,SERVER)
