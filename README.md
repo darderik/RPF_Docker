@@ -39,7 +39,7 @@ This file handles every variable you may want to edit. The values are defined at
 
 **VALIDATE_SERVER**:(1,0) Validate game files each `docker-compose run`. Disabling this will result in shorter loading times.
 
-**FAST_START**:(1,0) Enabling this will reduce significantly loading times. Enable this only after having logged in with steamcmd.
+**FAST_START**:(1,0) Enabling this will reduce significantly loading times. Enable only after having logged in with steamcmd.
 
 ## Mysql related variables
 There are mainly two scenarios available;
