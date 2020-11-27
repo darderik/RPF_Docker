@@ -39,9 +39,10 @@ function verifyCredentials([string]$SteamUN, [string]$SteamPWD) {
     if ([string]::IsNullOrEmpty($SteamUN) -or ([string]::IsNullOrEmpty($SteamPWD))) { throw "ERR:Provided password/username is null. Check envVars.env file" }
     $job = Start-Job -ScriptBlock {
         Param($SteamUN, $SteamPWD)
-        steamcmd +login $SteamUN $SteamPWD +quit
+        steamcmd +login $SteamUN $SteamPWD
     } -ArgumentList $SteamUN, $SteamPWD 
     Start-Sleep -Seconds 3     
+    $job.StopJob()
     $grep = Receive-Job $job | Select-String -Pattern "Invalid Password" -SimpleMatch
     if  (-not [string]::IsNullOrEmpty($grep)) {
         throw "ERR:Invalid username/password combination,check envVars.env File"
